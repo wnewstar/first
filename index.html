@@ -3,8 +3,34 @@
 <head>
     <title>First</title>
 </head>
-<body>
-    <h1>First</h1>
-    <a href="https://wnewstar.github.io/first/second.html">Second</a>
+<style type="text/css">
+.full-screen-bg {
+  background-image: url('./img/A0.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+}
+.a-button {
+	display: inline-block;
+	width: 80%;
+	padding: 0;
+	margin-left: 10%;
+	height: 10vh;
+	margin-top: 73vh;
+	text-align: center;
+	font-size: 10vh;
+	text-decoration: none;
+}
+</style>
+<body class="full-screen-bg">
+    <a href="https://wnewstar.github.io/first/information.html class="a-button">&nbsp;</a>
 </body>
+<script type="text/javascript">
+	const param = new URLSearchParams(window.location.search)
+	const data1 = param.get('data1')
+	const data2 = param.get('data2')
+	document.getElementById('data1').href = `https://wnewstar.github.io/first/information.html?data1=${data1}&data2=${data2}`
+</script>
 </html>
