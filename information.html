@@ -34,10 +34,12 @@
     <span class="data-span" id="data2" style="margin-top: 0.30vh;"></span>
 </body>
 <script type="text/javascript">
-	const param = new URLSearchParams(window.location.search)
-	const data1 = param.get('data1')
-	const data2 = param.get('data2')
-	document.getElementById('data1').textContent = data1
-	document.getElementById('data2').textContent = data2
+	setTimeout(() => {
+  		const param = new URLSearchParams(window.location.search)
+		const data1 = param.get('data1')
+		const data2 = param.get('data2')
+		document.getElementById('data1').textContent = data1
+		document.getElementById('data2').textContent = data2
+	}, 1000)
 </script>
 </html>
