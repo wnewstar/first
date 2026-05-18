@@ -5,16 +5,26 @@
 </head>
 <style type="text/css">
 </style>
-<body>
-    <span style="display: inline-block;width: 50px;text-align: right;">序列号</span>：<input type="text" name="a" id="a" style="width: 200px;">
-    <span style="display: inline-block;width: 50px;text-align: right;">PIN</span>：<input type="text" name="b" id="b" style="width: 200px;">
-    <span style="display: inline-block;width: 50px;text-align: right;">公司</span>：<input type="text" name="c" id="c" style="width: 200px;">
+<body style="font-size: 20px;">
+    <span style="display: inline-block;width: 70px;text-align: right;">序列号</span>：<input type="text" name="a" id="a" style="width: 300px;height: 40px;font-size: 25px;"><br><br>
+    <span style="display: inline-block;width: 70px;text-align: right;">验证码</span>：<input type="text" name="b" id="b" style="width: 300px;height: 40px;font-size: 25px;"><br><br>
+    <span style="display: inline-block;width: 70px;text-align: right;">公司名</span>：<input type="text" name="c" id="c" style="width: 300px;height: 40px;font-size: 25px;"><br><br>
+    <input type="button" name="submit" id="submit" value="提 交" style="width: 100px;height: 50px;font-size: 25px;">
 </body>
 <script type="text/javascript">
-    let a = document.getElementById('a')
-    let b = document.getElementById('a')
-    let c = document.getElementById('a')
+  document.getElementById('submit').addEventListener('click', function(event) {
+    let a = document.getElementById('a').value
+    let b = document.getElementById('b').value
+    let c = document.getElementById('c').value
+    console.log(a, b, c)
+    if (a.length === 0
+      || b.lenght === 0
+      || c.length === 0) {
+      return alert('数据不能为空')
+    }
+
     let s = btoa(`a=${a}&b=${b}&c=${c}`)
-    window.open('https://api.pwmqr.com/qrcode/create/?url=' + encodeURIComponent(`https://wnewstar.github.io/first/information.html?s=${s}`), '_blank')
+    window.open('https://api.pwmqr.com/qrcode/create/?url=' + encodeURIComponent(`https://wnewstar.github.io/first/auth.html?s=${s}`), '_blank')
+  })
 </script>
 </html>
